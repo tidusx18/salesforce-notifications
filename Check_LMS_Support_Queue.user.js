@@ -59,11 +59,11 @@
         auraContext =
             {
             "mode": "PROD",
-            "fwuid": `${$A.wb.Mf}`,
+            "fwuid": `${$A.xb.dh}`,
             "app": "one:one",
             "loaded":
             {
-                "APPLICATION@markup://one:one": `${$A.wb.loaded['APPLICATION@markup://one:one']}`
+                "APPLICATION@markup://one:one": `${$A.xb.loaded['APPLICATION@markup://one:one']}`
             },
             "dn": [],
             "globals":
@@ -87,7 +87,7 @@
         message = encodeURIComponent(JSON.stringify(message))
         auraContext = encodeURIComponent(JSON.stringify(auraContext))
         pageURI = `aura.pageURI="/lightning/o/Case/list?filterName=00BF0000006iTxHMAU"`
-        token = `aura.token=${$A.clientService.Bc}`
+        token = `aura.token=${$A.clientService.Ac}`
 
         url = 'https://fiuonline.lightning.force.com/aura?r=35&ui-force-components-controllers-lists-listViewDataManager.ListViewDataManager.getItems=1&ui-force-components-controllers-lists-listViewManagerGrid.ListViewManagerGrid.getRecordLayoutComponent=1'
 
@@ -103,6 +103,6 @@
             .then( res => res.json() )
             .then( res => res.context.globalValueProviders[6] ? dispatchNotification() : console.log('Nothing in queue...') )
 
-    }, 300000) // time is in milliseconds (1000 == 1 second)
+    }, 600000) // time is in milliseconds (1000 == 1 second)
 
 })();
