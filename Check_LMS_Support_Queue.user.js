@@ -59,7 +59,7 @@
         auraContext =
             {
             "mode": "PROD",
-            "fwuid": `${$A.xb.dh}`,
+            "fwuid": `${$A.wb.dh}`,
             "app": "one:one",
             "loaded":
             {
