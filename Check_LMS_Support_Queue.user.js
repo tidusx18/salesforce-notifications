@@ -1,9 +1,10 @@
 // ==UserScript==
 // @name         Check SF LMS Support Queue
 // @namespace    http://github.com/tidusx18
-// @version      0.0.1
+// @updateURL    https://github.com/tidusx18/salesforce-notifications/raw/master/Check_LMS_Support_Queue.user.js
+// @version      0.0.2
 // @author       Daniel Victoriano <victoriano518@gmail.com>
-// @match        https://fiuonline.lightning.force.com/*
+// @match        https://fiuonline.lightning.force.com/lightning/*
 // @run-at       default
 // @noframes
 // @grant        GM_notification
@@ -59,11 +60,11 @@
         auraContext =
             {
             "mode": "PROD",
-            "fwuid": `${$A.wb.dh}`,
+            "fwuid": `${$A.wb.hh}`,
             "app": "one:one",
             "loaded":
             {
-                "APPLICATION@markup://one:one": `${$A.xb.loaded['APPLICATION@markup://one:one']}`
+                "APPLICATION@markup://one:one": `${$A.wb.loaded['APPLICATION@markup://one:one']}`
             },
             "dn": [],
             "globals":
@@ -101,7 +102,7 @@
             body: `message=${message}&aura.context=${auraContext}&${pageURI}&${token}`
         })
             .then( res => res.json() )
-            .then( res => res.context.globalValueProviders[6] ? dispatchNotification() : console.log('Nothing in queue...') )
+            .then( res => res.context.globalValueProviders[5] ? dispatchNotification() : console.log('Nothing in queue...') )
 
     }, 600000) // time is in milliseconds (1000 == 1 second)
 
