@@ -2,7 +2,7 @@
 // @name         Check SF LMS Support Queue
 // @namespace    http://github.com/tidusx18
 // @updateURL    https://github.com/tidusx18/salesforce-notifications/raw/master/Check_LMS_Support_Queue.user.js
-// @version      0.0.2
+// @version      0.0.3
 // @author       Daniel Victoriano <victoriano518@gmail.com>
 // @match        https://fiuonline.lightning.force.com/lightning/*
 // @run-at       default
@@ -60,11 +60,11 @@
         auraContext =
             {
             "mode": "PROD",
-            "fwuid": `${$A.wb.hh}`,
+            "fwuid": `${$A.vb.hh}`,
             "app": "one:one",
             "loaded":
             {
-                "APPLICATION@markup://one:one": `${$A.wb.loaded['APPLICATION@markup://one:one']}`
+                "APPLICATION@markup://one:one": `${$A.vb.loaded['APPLICATION@markup://one:one']}`
             },
             "dn": [],
             "globals":
@@ -105,5 +105,3 @@
             .then( res => res.context.globalValueProviders[5] ? dispatchNotification() : console.log('Nothing in queue...') )
 
     }, 600000) // time is in milliseconds (1000 == 1 second)
-
-})();
