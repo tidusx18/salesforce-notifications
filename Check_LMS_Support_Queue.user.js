@@ -105,3 +105,4 @@
             .then( res => res.context.globalValueProviders[5] ? dispatchNotification() : console.log('Nothing in queue...') )
 
     }, 600000) // time is in milliseconds (1000 == 1 second)
+})
